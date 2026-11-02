@@ -36,6 +36,24 @@ test("positive: a shopper can choose sizes, add items, and empty the demo bag", 
   await expect(page.locator("#bag-count")).toHaveText("0");
 });
 
+test("mobile: the size selector and demo bag work at a narrow viewport", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.locator('input[name="size"][value="M"]').check();
+  await page
+    .getByRole("button", { name: "Add to demo bag", exact: true })
+    .click();
+  await expect(page.locator("#bag-count")).toHaveText("1");
+  await expect(page.locator("#bag-status")).toContainText("M");
+  await page
+    .getByRole("button", { name: "Empty demo bag", exact: true })
+    .click();
+  await expect(page.locator("#bag-count")).toHaveText("0");
+  await expect(page.locator("#bag-status")).toContainText("empty");
+});
+
 test("keyboard: the skip link reaches main and the size controls work without a mouse", async ({
   page,
 }) => {
