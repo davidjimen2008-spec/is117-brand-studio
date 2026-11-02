@@ -5,39 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="An unfinished, neutral T-shirt storefront for the IS117 Brand Studio. Build a brand through deliberate, visible design choices."
+      content="ABOVE THE MEAN is everyday streetwear with a point of view. Explore the white T-shirt and its demo-only size and bag experience."
     />
-    <title>Your Brand — neutral storefront starter</title>
+    <title>ABOVE THE MEAN — Everyday streetwear</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
     <script src="shop.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <aside class="starter-notice" aria-label="Starter information">
-      <span
-        ><strong>Unfinished by design.</strong> This is a neutral teaching
-        starter. Replace its identity after your brand decisions.</span
-      >
-      <a href="studio.html"
-        >Enter the studio <span aria-hidden="true">↗</span></a
-      >
-    </aside>
     <header class="site-header wrap">
       <a
         class="brand-link"
         href="index.html"
-        aria-label="Your Brand storefront home"
+        aria-label="Above The Mean storefront home"
         ><img
           class="wordmark"
           src="assets/wordmark.svg"
-          alt="Neutral starter wordmark"
+          alt="Above The Mean"
           width="175"
           height="26"
       /></a>
       <nav class="main-nav" aria-label="Main navigation">
         <a class="nav-link" href="index.html" aria-current="page">Shop</a>
         <a class="nav-link" href="styleguide.html">Style guide</a>
+        <a class="nav-link" href="explorations.html">Hero studies</a>
         <a class="nav-link" href="studio.html"
           >Studio <span aria-hidden="true">↗</span></a
         >
@@ -48,36 +40,76 @@
     </header>
 
     <main id="main">
-      <section class="product-section wrap" aria-labelledby="product-title">
+      <section
+        id="product"
+        class="product-section wrap"
+        aria-labelledby="product-title"
+      >
         <div class="product-visual">
-          <div class="visual-label">
-            <span>001 / The starting point</span><span>Unbranded</span>
+          <div class="product-image-frame">
+            <div class="visual-label">
+              <span>001 / EVERYWO/MAN'S ATM</span>
+              <span>Styling reference</span>
+            </div>
+            <img
+              class="wearer-image"
+              src="assets/stock-tee-worn-pexels-17858295.jpg"
+              alt="Stock photo of a person wearing a plain white T-shirt and jeans; it is not the demo product."
+              width="500"
+              height="750"
+              fetchpriority="high"
+            />
+            <aside class="product-illustration">
+              <span class="micro-label">Demo tee illustration</span>
+              <img
+                src="assets/white-shirt.svg"
+                alt="Illustration of the plain white demo T-shirt"
+                width="800"
+                height="880"
+              />
+            </aside>
           </div>
-          <img
-            class="shirt-image"
-            src="assets/white-shirt.svg"
-            alt="Plain white, unbranded short-sleeved T-shirt"
-            width="800"
-            height="880"
-            fetchpriority="high"
-          />
           <div class="image-caption">
-            <span>One product. Room for your point of view.</span
-            ><span aria-hidden="true">↙</span>
+            <span
+              >Stock styling photo—not the demo product or an endorsement.</span
+            >
+            <a
+              href="https://www.pexels.com/photo/standing-man-in-jeans-and-white-t-shirt-17858295/"
+              target="_blank"
+              rel="noreferrer"
+              >Photo: Estefania Milazzo / Pexels</a
+            >
           </div>
         </div>
         <div class="product-information">
           <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span> Neutral product
-            / demo only
+            <span class="status-dot" aria-hidden="true"></span> ABOVE THE MEAN /
+            STREETWEAR / DEMO ONLY
           </p>
-          <h1 id="product-title">The white<br />T-shirt.</h1>
-          <p class="product-intro">A plain shirt. A place to begin.</p>
+          <h1 id="product-title">EVERYWO/<wbr />MAN'S ATM</h1>
+          <p class="product-intro">
+            Everyday streetwear with a step-up point of view, without the hard
+            sell.
+          </p>
           <p class="muted product-description">
-            This starter has a working product page and room for a brand. Its
-            audience, personality, message, and visual direction are still yours
-            to decide.
+            A white T-shirt, presented as everyday streetwear with a point of
+            view.
           </p>
+          <p class="identity-note">
+            Everyday style has room for every point of view.
+          </p>
+          <details class="style-tip-card">
+            <summary>
+              Three free ways to style a white tee
+              <span aria-hidden="true">+</span>
+            </summary>
+            <ul>
+              <li>Layer it under an open overshirt.</li>
+              <li>Tuck it into trousers you already wear.</li>
+              <li>Use it as a base under a favorite jacket.</li>
+            </ul>
+            <p class="field-help">Ideas only. No signup or purchase needed.</p>
+          </details>
           <div class="price-row">
             <p class="price">$28 <span>USD</span></p>
             <span class="micro-label">Fictional demo price</span>
@@ -129,7 +161,7 @@
             </div>
             <div>
               <dt>Brand identity</dt>
-              <dd>Not decided yet</dd>
+              <dd>ABOVE THE MEAN</dd>
             </div>
             <div>
               <dt>Product claims</dt>
@@ -167,30 +199,11 @@
           </p>
         </div>
       </section>
-
-      <section class="starter-next wrap" aria-labelledby="next-title">
-        <p class="eyebrow">For the person building this site</p>
-        <h2 id="next-title">The shirt stays.<br />The story is your work.</h2>
-        <div>
-          <p>
-            Choose who this is for, decide what the brand should express, and
-            make those choices visible. Keep the storefront and its
-            <a href="styleguide.html">live style guide</a> in sync.
-          </p>
-          <a class="button button-secondary" href="studio.html"
-            >See the studio brief <span aria-hidden="true">↗</span></a
-          >
-        </div>
-      </section>
     </main>
-
     <footer class="site-footer wrap">
-      <p>
-        IS117 Brand Studio <span class="footer-separator"> / </span> Neutral
-        starter
-      </p>
-      <p class="footer-tagline">Fictional product. Real design decisions.</p>
-      <a href="https://github.com/kaw393939/is117-brand-studio#readme"
+      <p>ABOVE THE MEAN <span class="footer-separator"> / </span> Streetwear</p>
+      <p class="footer-tagline">Fictional demo product. No checkout.</p>
+      <a href="https://github.com/davidjimen2008-spec/is117-brand-studio#readme"
         >Project README <span aria-hidden="true">↗</span></a
       >
     </footer>

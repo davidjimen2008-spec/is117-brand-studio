@@ -1,0 +1,439 @@
+.exploration-page {
+  --study-blue: var(--color-accent);
+  --study-ink: var(--color-ink);
+  --study-muted: var(--color-muted);
+  --study-line: var(--color-line);
+  --study-paper: var(--color-paper);
+  --study-soft: var(--color-soft);
+
+  background: var(--study-paper);
+  color: var(--study-ink);
+}
+
+.study-header {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--study-line);
+}
+
+.study-brand {
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.study-nav,
+.study-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+  font-size: 0.77rem;
+}
+
+.study-intro {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 1.25rem 3rem;
+  align-items: end;
+  padding-block: 4rem 2.5rem;
+}
+
+.study-intro .eyebrow,
+.study-jump {
+  grid-column: 1 / -1;
+}
+
+.study-intro h1 {
+  font-size: clamp(3.2rem, 6vw, 6.5rem);
+}
+
+.study-intro > p:not(.eyebrow) {
+  max-width: 430px;
+  color: var(--study-muted);
+  font-size: 0.9rem;
+}
+
+.study-jump {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--study-line);
+}
+
+.study-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.hero-study {
+  min-width: 0;
+  border-top: 1px solid var(--study-line);
+}
+
+.study-heading {
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  padding-block: 1rem;
+}
+
+.study-number {
+  color: var(--study-muted);
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.07em;
+}
+
+.study-heading h2 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  letter-spacing: -0.04em;
+}
+
+.hero-preview {
+  position: relative;
+  isolation: isolate;
+  min-height: 440px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  padding: clamp(1.1rem, 2.5vw, 2rem);
+  background: var(--study-paper);
+  border: 1px solid var(--study-line);
+}
+
+.hero-stamp,
+.hero-index {
+  position: absolute;
+  z-index: 2;
+  color: var(--study-muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+}
+
+.hero-stamp {
+  top: 1rem;
+  left: 1rem;
+}
+
+.hero-index {
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.hero-copy,
+.hero-product {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.hero-brand {
+  margin-bottom: 1.2rem;
+  color: var(--study-blue);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hero-copy h3 {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.hero-copy h3 > span {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-copy h3 > .study-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  margin: -1px;
+  border: 0;
+  white-space: nowrap;
+}
+
+.hero-copy > p[data-study-support] {
+  max-width: 24ch;
+  margin-top: 1rem;
+  color: var(--study-muted);
+  font-size: 0.88rem;
+}
+
+.hero-copy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 44px;
+  margin-top: 1.4rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--study-blue);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.hero-copy a:hover {
+  background: var(--study-ink);
+}
+
+.hero-copy a:focus-visible,
+.study-nav a:focus-visible,
+.study-jump a:focus-visible,
+.study-footer a:focus-visible,
+.reference-link a:focus-visible {
+  outline-color: var(--study-blue);
+}
+
+.hero-product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.study-annotations > h3 {
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-study-modernist .hero-preview {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.7%,
+      #d9deea 49.7%,
+      #d9deea 50%,
+      transparent 50%
+    ),
+    var(--study-paper);
+}
+
+.hero-study-modernist .hero-preview::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 6px;
+  background: var(--study-blue);
+  content: "";
+}
+
+.hero-study-modernist .hero-product {
+  border-left: 1px solid var(--study-line);
+}
+
+.hero-study-postmodernist .hero-preview {
+  grid-template-columns: 1fr 1fr;
+  background: var(--study-soft);
+}
+
+.hero-study-postmodernist .hero-preview::before {
+  position: absolute;
+  z-index: 0;
+  top: 3.5rem;
+  right: -2rem;
+  width: 56%;
+  height: 58%;
+  transform: rotate(8deg);
+  background: var(--study-blue);
+  content: "";
+}
+
+.hero-study-postmodernist .hero-copy {
+  padding: 1.1rem;
+  background: var(--study-paper);
+  border: 1px solid var(--study-ink);
+  box-shadow: 7px 7px 0 var(--study-ink);
+}
+
+.hero-study-postmodernist .hero-copy h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+.hero-study-postmodernist .hero-product {
+  transform: rotate(2deg);
+  background: var(--study-paper);
+  border: 1px solid var(--study-ink);
+}
+
+.postmodern-shape {
+  position: absolute;
+  z-index: 0;
+  right: 0.6rem;
+  bottom: 0.8rem;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border: 8px solid var(--study-ink);
+  border-radius: 50%;
+}
+
+.study-annotations {
+  padding: 1.2rem 0 1.5rem;
+}
+
+.reference-link {
+  margin-top: 0.5rem;
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
+.study-annotations dl {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+}
+
+.study-annotations dl > div {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 0.8rem;
+  border-top: 1px solid var(--study-line);
+  padding-top: 0.75rem;
+}
+
+.study-annotations dt {
+  font-family: var(--font-mono);
+  font-size: 0.61rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.study-annotations dd {
+  margin: 0;
+  color: var(--study-muted);
+  font-size: 0.75rem;
+}
+
+.study-disclosure {
+  margin-top: 1rem;
+  border-left: 4px solid var(--study-blue);
+  padding: 0.9rem 1rem;
+  color: var(--study-muted);
+  font-size: 0.75rem;
+}
+
+.study-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--study-line);
+  padding-block: 1.2rem;
+  font-size: 0.74rem;
+}
+
+@media (width <= 900px) {
+  .study-pair {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-preview {
+    min-height: 380px;
+    grid-template-columns: 1fr 0.8fr;
+  }
+
+  .hero-copy h3 {
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+  }
+}
+
+@media (width <= 600px) {
+  .study-header {
+    min-height: 100px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.55rem;
+  }
+
+  .study-nav {
+    gap: 0.5rem 1rem;
+  }
+
+  .study-intro {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-block: 2.5rem 1.5rem;
+  }
+
+  .study-intro h1 {
+    font-size: clamp(3.2rem, 14vw, 5rem);
+  }
+
+  .study-jump {
+    grid-column: auto;
+  }
+
+  .study-heading {
+    min-height: 82px;
+  }
+
+  .hero-preview,
+  .hero-study-postmodernist .hero-preview {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 2.5rem 0.8rem 1.8rem;
+  }
+
+  .hero-copy h3,
+  .hero-study-postmodernist .hero-copy h3 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .hero-product {
+    width: min(68%, 240px);
+    justify-self: center;
+  }
+
+  .hero-copy > p[data-study-support] {
+    font-size: 0.76rem;
+  }
+
+  .hero-study-postmodernist .hero-copy {
+    padding: 0.7rem;
+    box-shadow: 4px 4px 0 var(--study-ink);
+  }
+
+  .hero-study-modernist .hero-product {
+    border-left: 0;
+  }
+
+  .study-annotations dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .study-footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exploration-page {
+    scroll-behavior: auto;
+  }
+}

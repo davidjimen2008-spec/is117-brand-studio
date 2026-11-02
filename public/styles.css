@@ -1,18 +1,18 @@
-/* Shared brand tokens. Change these after you agree on your brand direction.
-   Both the storefront and the live style guide use this file. */
+/* Shared brand tokens used by the storefront, style guide, and hero studies. */
 :root {
-  --color-paper: #f6f5f0;
-  --color-ink: #171a18;
-  --color-muted: #5a615b;
-  --color-line: #d1d5cc;
-  --color-accent: #e3ef56;
-  --color-soft: #e8eae1;
+  --color-paper: #f7f6f1;
+  --color-ink: #111827;
+  --color-muted: #4b5563;
+  --color-line: #b7bfcc;
+  --color-accent: #1d4ed8;
+  --color-soft: #e4e7ed;
   --color-white: #fff;
   --color-danger: #992e28;
   --font-body:
     system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
   --font-display:
     system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --font-accent: georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, sfmono-regular, consolas, monospace;
   --space-1: 0.5rem;
   --space-2: 1rem;
@@ -87,7 +87,7 @@ button:disabled {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-white);
 }
 
 h1,
@@ -179,18 +179,19 @@ p + p {
   transform: translateY(0);
 }
 
-.starter-notice {
+.brand-notice {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   padding: 0.8rem 3rem;
   background: var(--color-accent);
+  color: var(--color-white);
   font-size: 0.73rem;
   line-height: 1.5;
 }
 
-.starter-notice a {
+.brand-notice a {
   flex-shrink: 0;
   font-weight: 650;
 }
@@ -256,7 +257,7 @@ p + p {
 
 .product-section {
   display: grid;
-  grid-template-columns: 1.13fr 1fr;
+  grid-template-columns: minmax(0, 1.13fr) minmax(0, 1fr);
   gap: clamp(3rem, 7vw, 8rem);
   padding-block: var(--space-5) 5rem;
   align-items: start;
@@ -264,6 +265,13 @@ p + p {
 
 .product-visual {
   position: relative;
+  min-width: 0;
+  background: var(--color-soft);
+}
+
+.product-image-frame {
+  position: relative;
+  overflow: hidden;
   background: var(--color-soft);
 }
 
@@ -277,15 +285,36 @@ p + p {
   font-size: 0.6rem;
 }
 
-.shirt-image {
+.wearer-image {
   width: 100%;
   height: auto;
+  aspect-ratio: 800 / 1080;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.product-illustration {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: clamp(7rem, 26%, 10rem);
+  padding: 0.45rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  box-shadow: 0 0.5rem 1.5rem rgb(17 24 39 / 14%);
+}
+
+.product-illustration img {
+  width: 100%;
+  height: auto;
+  margin-top: 0.35rem;
   aspect-ratio: 800 / 880;
   object-fit: contain;
 }
 
 .image-caption {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -294,18 +323,66 @@ p + p {
   font-size: 0.59rem;
 }
 
-.image-caption > :last-child {
+.image-caption a {
   font-family: var(--font-body);
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.photo-direction {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: center;
+  margin-top: var(--space-3);
+  padding: var(--space-2);
+  border: 1px solid var(--color-line);
+  background: var(--color-soft);
+}
+
+.photo-direction img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.photo-direction h3 {
+  margin-bottom: 0.5rem;
+}
+
+.photo-direction a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
 }
 
 .product-information {
   max-width: 530px;
-  padding-block: 1rem;
+  position: relative;
+  min-width: 0;
+  isolation: isolate;
+  padding: 1.5rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
+  box-shadow: 10px 10px 0 var(--color-ink);
+}
+
+.product-information::before {
+  position: absolute;
+  z-index: -1;
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 5rem;
+  height: 5rem;
+  background: var(--color-accent);
+  content: "";
 }
 
 .product-information h1 {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 700;
   margin-top: 1.6rem;
 }
 
@@ -320,6 +397,42 @@ p + p {
   margin-top: 0.6rem;
   font-size: 0.88rem;
   max-width: 430px;
+}
+
+.identity-note {
+  margin-top: 1rem;
+  border-left: 4px solid var(--color-accent);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.style-tip-card {
+  margin-top: 1.2rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+}
+
+.style-tip-card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding: 0.7rem 0.85rem;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 650;
+  list-style: none;
+}
+
+.style-tip-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.style-tip-card > p {
+  padding: 0 0.85rem 0.75rem;
+  font-size: 0.73rem;
 }
 
 .price-row {
@@ -403,10 +516,15 @@ legend {
     border-color 150ms ease;
 }
 
+.style-tip-card span {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
 .size-option input:checked + span {
-  background: var(--color-ink);
-  border-color: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .size-option input:hover + span {
@@ -452,13 +570,13 @@ legend {
 }
 
 .button-primary {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-accent);
+  color: var(--color-white);
 }
 
 .button-primary:hover {
-  background: var(--color-accent);
-  color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-white);
 }
 
 .button-secondary {
@@ -562,28 +680,6 @@ legend {
 .bag-details .field-help {
   margin-top: 0.4rem;
   font-size: 0.69rem;
-}
-
-.starter-next {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem 3rem;
-  background: var(--color-accent);
-  padding: 2.7rem 3rem 3rem;
-  margin-block: 1rem 4rem;
-}
-
-.starter-next > .eyebrow {
-  grid-column: 1 / -1;
-}
-
-.starter-next > div {
-  max-width: 470px;
-  font-size: 0.86rem;
-}
-
-.starter-next .button {
-  margin-top: 1.6rem;
 }
 
 .site-footer {
@@ -690,7 +786,7 @@ legend {
   display: inline-block;
   padding: 0.3rem 0.55rem;
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-white);
   font-family: var(--font-mono);
   font-size: 0.6rem;
   line-height: 1.4;
@@ -700,7 +796,7 @@ legend {
 
 .decision-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   margin-top: 1.6rem;
 }
@@ -763,13 +859,12 @@ legend {
 }
 
 .logo-small {
-  width: 110px;
+  width: 150px;
   height: auto;
 }
 
 .logo-mono {
-  width: 190px;
-  filter: brightness(0);
+  width: 220px;
 }
 
 .logo-variant p,
@@ -856,6 +951,13 @@ legend {
   letter-spacing: 0.06em;
 }
 
+.type-accent {
+  font-family: var(--font-accent);
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-style: italic;
+  letter-spacing: -0.04em;
+}
+
 .spacing-grid {
   display: flex;
   flex-wrap: wrap;
@@ -893,6 +995,52 @@ legend {
 
 .button-samples .button {
   min-width: 185px;
+}
+
+.ethics-components {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ethics-components .identity-note,
+.ethics-components .style-tip-card {
+  align-self: start;
+  margin-top: 0;
+}
+
+.persuasion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.persuasion-card {
+  border: 1px solid var(--color-line);
+  padding: 1.2rem;
+  background: var(--color-white);
+}
+
+.principle-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.persuasion-card h3 {
+  font-size: 1rem;
+}
+
+.persuasion-card p {
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.78rem;
 }
 
 .voice-grid {
@@ -950,7 +1098,7 @@ legend {
     width: calc(100% - 4rem);
   }
 
-  .starter-notice {
+  .brand-notice {
     padding-inline: 2rem;
   }
 
@@ -1003,17 +1151,17 @@ legend {
     width: calc(100% - 2.5rem);
   }
 
-  .starter-notice {
+  .brand-notice {
     padding: 0.75rem 1.25rem;
     font-size: 0.67rem;
     gap: 1rem;
   }
 
-  .starter-notice > span {
+  .brand-notice > span {
     max-width: 480px;
   }
 
-  .starter-notice a {
+  .brand-notice a {
     font-size: 0.65rem;
   }
 
@@ -1053,7 +1201,7 @@ legend {
   }
 
   .product-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
     padding-block: 1.5rem 3rem;
   }
@@ -1064,17 +1212,22 @@ legend {
     margin-inline: auto;
   }
 
-  .shirt-image {
-    max-height: 530px;
+  .photo-direction {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .photo-direction img {
+    width: min(100%, 18rem);
   }
 
   .product-information {
     max-width: none;
-    padding: 0;
+    padding: 1.1rem;
+    margin-inline: 0.3rem;
   }
 
   .product-information h1 {
-    font-size: clamp(4.2rem, 13vw, 7rem);
+    font-size: clamp(2.8rem, 12vw, 4.2rem);
     margin-top: 1rem;
   }
 
@@ -1099,17 +1252,6 @@ legend {
 
   .bag-section h2 {
     margin-top: 0.6rem;
-  }
-
-  .starter-next {
-    grid-template-columns: 1fr;
-    padding: 1.8rem;
-    gap: 1.3rem;
-    margin-block: 1rem 3rem;
-  }
-
-  .starter-next > div {
-    max-width: none;
   }
 
   .site-footer {
@@ -1203,7 +1345,7 @@ legend {
 }
 
 @media (width <= 420px) {
-  .starter-notice {
+  .brand-notice {
     align-items: start;
     flex-direction: column;
     gap: 0.35rem;
@@ -1280,6 +1422,11 @@ legend {
   .voice-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .ethics-components,
+  .persuasion-grid {
+    grid-template-columns: 1fr;
   }
 }
 
