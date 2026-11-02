@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 52" role="img" aria-labelledby="title">
-  <title id="title">Neutral starter wordmark: Your Brand</title>
-  <text x="0" y="40" fill="#171a18" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" letter-spacing="-1.6">YOUR BRAND</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 74" role="img" aria-labelledby="title">
+  <title id="title">Above The Mean</title>
+  <rect x="1" y="1" width="72" height="72" fill="#1d4ed8"/>
+  <path d="M13 57 27 17h12l14 40h-10l-2.5-9h-15L22 57Zm20-18-4-12-4 12Z" fill="#fff"/>
+  <path d="m49 48 15-15m0 0H53m11-0v11" fill="none" stroke="#fff" stroke-linecap="square" stroke-width="4"/>
+  <text x="88" y="29" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2.1">ABOVE THE</text>
+  <text x="86" y="65" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="800" letter-spacing="1.8">MEAN</text>
 </svg>

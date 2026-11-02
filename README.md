@@ -2,7 +2,7 @@
 
 **The same white T-shirt can carry very different meanings.** Develop a brand for it with an AI collaborator, then make those decisions visible in a professional website and a live style guide.
 
-This template starts with a working, deliberately neutral storefront. Your audience, name, promise, logo, voice, and visual direction are **not chosen yet**. You make the decisions; the agent helps you explore, build, check, and revise them.
+The starter began with a working, deliberately neutral storefront. This repository is now developing `BRAND-001`, its first brand and live style guide: ABOVE THE MEAN, a blue-and-neutral streetwear concept for one white T-shirt. The Everyman archetype, Postmodernist direction, and AI-drafted one-sentence promise approved by the learner are recorded in [SPEC.md](SPEC.md); the primary audience remains a hypothesis, while voice traits and the reason for the visual direction remain open. The branded storefront preserves the size selector and temporary demo bag; it does not add checkout, payments, accounts, or persistence.
 
 **A short record, visible to you:** your AI coach updates [LEARNING.md](LEARNING.md) with brief task-related explanations, observations and help received. It is AI-drafted, not a full transcript, and may be public with your repository. Review it and correct or remove excerpts before they are committed or pushed. Your instructor uses it alongside the project with this [simple three-part rubric](docs/assessment.md); the AI does not assign your grade.
 
@@ -31,7 +31,7 @@ This template starts with a working, deliberately neutral storefront. Your audie
 
 Save an HTML, CSS, JavaScript, or asset file under `public/` to refresh the local browser automatically; unsaved edits do not appear. A refresh resets the temporary demo bag. `npm start` is an alias for this same development mode. Press **Ctrl+C** in the terminal running the server to stop it. To switch to a plain preview, stop the server first, then use `npm run preview` and reopen its printed address. Refresh the browser yourself after saving. These commands serve your local files; publishing to GitHub Pages is a later step.
 
-**First success checkpoint:** you can see the neutral white T-shirt page, choose a size, and add it to the demo bag. Tell the agent what you actually see. The bag is a demonstration; it does not take payments, persist between visits, or place orders.
+**Current browser checkpoint:** view the ABOVE THE MEAN white T-shirt draft, choose a size, and add it to the demo bag. Tell the agent what you actually see. The bag is a demonstration; it does not take payments, persist between visits, or place orders.
 
 If a command fails, paste the real error into the same chat. If the port is in use, let the agent help you stop your earlier preview or use `PORT=5175 npm run dev`, then open its printed address. You can ask for a hint, an example, or a small recommendation at any time. You do not need to know the branding vocabulary first.
 
@@ -54,15 +54,16 @@ You work at your own pace. There is no required class demonstration, quiz, separ
 
 ## What is here
 
-| File                                   | Purpose                                                                                                    |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `public/index.html`                    | Working storefront; the first branding feature is still pending                                            |
-| `public/styleguide.html`               | Live identity board using the storefront's shared styles and assets                                        |
-| `public/studio.html`                   | Short studio overview, also [available online](https://kaw393939.github.io/is117-brand-studio/studio.html) |
-| [SPEC.md](SPEC.md)                     | The concise record of your chosen decisions and evidence                                                   |
-| [AGENTS.md](AGENTS.md)                 | Instructions for your AI coach                                                                             |
-| [LEARNING.md](LEARNING.md)             | Brief AI-drafted conversation evidence for you to review; no full transcript or automatic grade            |
-| [docs/reference.md](docs/reference.md) | Short explanations and source links to use when needed                                                     |
+| File                                   | Purpose                                                                                                                 |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `public/index.html`                    | ABOVE THE MEAN storefront draft with the original size selector and temporary demo bag                                  |
+| `public/styleguide.html`               | Live identity board using the storefront's shared styles, tokens, and assets; unresolved choices stay labeled as drafts |
+| `public/explorations.html`             | Paired modernist and postmodernist hero studies with matching content, references, and annotations                      |
+| `public/studio.html`                   | Short studio overview, also [available online](https://kaw393939.github.io/is117-brand-studio/studio.html)              |
+| [SPEC.md](SPEC.md)                     | The concise record of chosen decisions, open questions, and actual evidence                                             |
+| [AGENTS.md](AGENTS.md)                 | Instructions for your AI coach                                                                                          |
+| [LEARNING.md](LEARNING.md)             | Brief AI-drafted conversation evidence for you to review; no full transcript or automatic grade                         |
+| [docs/reference.md](docs/reference.md) | Short explanations and source links to use when needed                                                                  |
 
 The README is the authoritative startup path. The online overview introduces the exercise; it does not replace your local project or chat.
 

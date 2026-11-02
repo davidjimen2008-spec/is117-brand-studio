@@ -21,6 +21,7 @@
   align-items: center;
   gap: 1.5rem;
   background: var(--color-accent);
+  color: var(--color-white);
   padding: 1.6rem 2rem;
 }
 
@@ -245,6 +246,15 @@
 .direction-card p {
   font-size: 0.75rem;
   color: var(--color-muted);
+}
+
+.study-link {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.74rem;
+  font-weight: 650;
+  text-underline-offset: 0.2em;
 }
 
 .comparison-caption {
