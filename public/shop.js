@@ -51,6 +51,47 @@
     });
   });
 
+  const checkout = document.createElement("section");
+  checkout.setAttribute("aria-label", "Simulated checkout");
+  const checkoutTitle = document.createElement("h3");
+  checkoutTitle.textContent = "Simulated checkout — no payment or shipment";
+  const checkoutButton = document.createElement("button");
+  checkoutButton.type = "button";
+  checkoutButton.textContent = "Place demo order (no charge)";
+  const checkoutStatus = document.createElement("p");
+  checkoutStatus.setAttribute("role", "status");
+  checkout.append(checkoutTitle, checkoutButton, checkoutStatus);
+  bagItems.parentElement.append(checkout);
+  checkoutButton.addEventListener("click", async () => {
+    if (!bag.length) {
+      checkoutStatus.textContent = "Add a size to the demo bag first.";
+      return;
+    }
+    if (!bag.every((size) => size === bag[0])) {
+      checkoutStatus.textContent = "For this demo, use one size per checkout. Clear the bag and choose one size.";
+      return;
+    }
+    checkoutButton.disabled = true;
+    try {
+      const response = await fetch("/api/demo-orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ size: bag[0], quantity: bag.length }),
+      });
+      if (!response.ok) throw new Error("The local checkout server is unavailable or rejected the order.");
+      const order = await response.json();
+      checkoutStatus.textContent = `Demo order saved. Confirmation: ${order.id}. Size ${order.size}, quantity ${order.quantity}. No payment or shipment.`;
+      const confirmation = document.createElement("a");
+      confirmation.href = `/api/demo-orders/${encodeURIComponent(order.id)}`;
+      confirmation.textContent = "Reopen saved demo confirmation";
+      checkoutStatus.append(" ", confirmation);
+    } catch (error) {
+      checkoutStatus.textContent = `${error.message} GitHub Pages is static; run npm start locally for SQLite checkout.`;
+    } finally {
+      checkoutButton.disabled = false;
+    }
+  });
+
   clearBag.addEventListener("click", () => {
     bag.length = 0;
     renderBag();
