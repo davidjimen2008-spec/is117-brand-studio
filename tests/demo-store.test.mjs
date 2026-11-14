@@ -13,7 +13,7 @@ test("SQLite demo order survives closing and reopening the database", () => {
     const saved = first.create("M", 2);
     first.close();
     const second = createDemoStore(filename);
-    assert.deepEqual(second.find(saved.id), saved);
+    assert.deepEqual({ ...second.find(saved.id) }, saved);
     assert.throws(() => second.create("INVALID", 1));
     assert.throws(() => second.create("S", 0));
     second.close();
