@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { readFile, realpath } from "node:fs/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
+import { createDemoStore } from "./demo-store.mjs";
 import { createDevelopmentReload } from "./dev-reload.mjs";
 
 const publicDirectory = path.resolve(
@@ -26,8 +27,33 @@ export function createApp({
   development = false,
   publicRoot = publicDirectory,
 } = {}) {
+  const store = createDemoStore();
   const reload = development ? createDevelopmentReload(publicRoot) : undefined;
   const app = createServer(async (request, response) => {
+    const route = new URL(request.url, "http://localhost").pathname;
+    if (route === "/api/demo-orders" && request.method === "POST") {
+      try {
+        let body = "";
+        for await (const chunk of request) {
+          body += chunk;
+          if (body.length > 4096) throw new Error("Request too large");
+        }
+        const { size, quantity } = JSON.parse(body);
+        const order = store.create(size, quantity);
+        response.writeHead(201, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+        response.end(JSON.stringify(order));
+      } catch (error) {
+        response.writeHead(400, { "Content-Type": "application/json" });
+        response.end(JSON.stringify({ error: error.message }));
+      }
+      return;
+    }
+    if (route.startsWith("/api/demo-orders/") && request.method === "GET") {
+      const order = store.find(route.slice("/api/demo-orders/".length));
+      response.writeHead(order ? 200 : 404, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+      response.end(JSON.stringify(order ?? { error: "Demo order not found" }));
+      return;
+    }
     if (!["GET", "HEAD"].includes(request.method)) {
       response.writeHead(405, { Allow: "GET, HEAD" });
       response.end("This demo serves files; it does not accept orders.");
@@ -78,7 +104,7 @@ export function createApp({
       );
     }
   });
-  app.on("close", () => reload?.close());
+  app.on("close", () => { reload?.close(); store.close(); });
   return app;
 }
 
