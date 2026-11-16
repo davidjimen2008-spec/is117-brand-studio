@@ -6,3 +6,6 @@ test-results/
 .env.*
 !.env.example
 *.log
+
+# Local-only simulated orders (never commit visitor data)
+data/
