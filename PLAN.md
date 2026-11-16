@@ -1,7 +1,7 @@
 # Plan — ABOVE THE MEAN T-shirt
 **IS117-005 Review 2 · November 14, 2026 · Due November 16, 11:30 a.m. ET**
 
-**Status (Nov 14):** Plan merged into main via PR #8. Local SQLite order store, POST/GET endpoints, simulated checkout UI and an automated persistence test have been committed. Actual test execution and classmate feedback remain pending; GitHub Pages does not host the backend.
+**Status (Nov 16):** Plan and SQLite implementation merged into main via PR #8. The student reported “code works” on Nov 14, but did not supply a test log or confirm save → restart → reopen. Therefore, runtime persistence verification remains unconfirmed. As of Nov 16, issue #7 has no classmate comments; feedback, decision and reviewer retry remain pending. GitHub Pages does not host the SQLite backend.
 
 ## Audience, problem, goal
 Primary audience (hypothesis from [RESEARCH.md](RESEARCH.md)): an everyday streetwear wearer who wants an elevated ordinary white tee without an over-the-top look. Secondary check: a plain-tee comparer who needs clear sizes and an honest explanation of the demo. Neither persona is validated through interviews. The goal is to let a visitor evaluate one white tee, choose a size, and complete a **simulated** checkout without suggesting a real purchase.
