@@ -1,7 +1,7 @@
 # Plan — ABOVE THE MEAN T-shirt
 **IS117-005 Review 2 · November 14, 2026 · Due November 16, 11:30 a.m. ET**
 
-**Status (Nov 16):** Plan and SQLite implementation merged into main via PR #8. The student reported “code works” on Nov 14, but did not supply a test log or confirm save → restart → reopen. Therefore, runtime persistence verification remains unconfirmed. As of Nov 16, issue #7 has no classmate comments; feedback, decision and reviewer retry remain pending. GitHub Pages does not host the SQLite backend.
+**Status (Nov 16):** Plan and SQLite implementation merged into main via PR #8. The student reported “code works” on Nov 14, but did not supply a test log or confirm save → restart → reopen. Therefore, runtime persistence verification remains unconfirmed. On Nov 16, Shakti2008 reviewed issue #7. Decision: accept the inconsistent-checkout-copy finding and update `public/index.html` (commit `6c998f02ce46b6d3dc2ba6782748ef83b2e1003f`). The requested restart-persistence evidence and reviewer retry remain pending. GitHub Pages does not host the SQLite backend.
 
 ## Audience, problem, goal
 Primary audience (hypothesis from [RESEARCH.md](RESEARCH.md)): an everyday streetwear wearer who wants an elevated ordinary white tee without an over-the-top look. Secondary check: a plain-tee comparer who needs clear sizes and an honest explanation of the demo. Neither persona is validated through interviews. The goal is to let a visitor evaluate one white tee, choose a size, and complete a **simulated** checkout without suggesting a real purchase.
@@ -54,3 +54,12 @@ Avoid fake scarcity, fabricated reviews, unverified material/fit claims and fake
 4. Update Canvas with the record, repository, deployed link if verified, issue and short change note.
 
 **References:** [RESEARCH.md](RESEARCH.md) · [SPEC.md](SPEC.md) · [LEARNING.md](LEARNING.md) · [course SQLite starter](https://kaw393939.github.io/is117-demo-days/examples/submissions/run-examples.html).
+
+## Peer review response — November 16, 2026
+
+Reviewer: Shakti2008, [issue #7 feedback](https://github.com/davidjimen2008-spec/is117-brand-studio/issues/7#issuecomment-6922134700).
+
+- **Feedback:** The bag text and footer incorrectly said there is no checkout, although the page now provides simulated checkout.
+- **Decision and change:** Accept. Updated `public/index.html` to say simulated checkout is available through the local server only, with no payment or shipment. [Linked commit](https://github.com/davidjimen2008-spec/is117-brand-studio/commit/6c998f02ce46b6d3dc2ba6782748ef83b2e1003f).
+- **Verification still needed:** Inspect the revised page and run the save → restart → reopen SQLite order test, plus empty bag/invalid input tests. Automated CI must pass before claiming test success.
+- **Reviewer retry:** Request Shakti2008 to recheck the revised wording and test evidence; leave issue open until confirmed.
