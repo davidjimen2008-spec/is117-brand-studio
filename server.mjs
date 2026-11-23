@@ -40,7 +40,10 @@ export function createApp({
         }
         const { size, quantity } = JSON.parse(body);
         const order = store.create(size, quantity);
-        response.writeHead(201, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+        response.writeHead(201, {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-store",
+        });
         response.end(JSON.stringify(order));
       } catch (error) {
         response.writeHead(400, { "Content-Type": "application/json" });
@@ -50,7 +53,10 @@ export function createApp({
     }
     if (route.startsWith("/api/demo-orders/") && request.method === "GET") {
       const order = store.find(route.slice("/api/demo-orders/".length));
-      response.writeHead(order ? 200 : 404, { "Content-Type": "application/json", "Cache-Control": "no-store" });
+      response.writeHead(order ? 200 : 404, {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+      });
       response.end(JSON.stringify(order ?? { error: "Demo order not found" }));
       return;
     }
@@ -104,7 +110,10 @@ export function createApp({
       );
     }
   });
-  app.on("close", () => { reload?.close(); store.close(); });
+  app.on("close", () => {
+    reload?.close();
+    store.close();
+  });
   return app;
 }
 

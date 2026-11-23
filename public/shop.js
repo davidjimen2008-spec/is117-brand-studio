@@ -18,9 +18,15 @@
       const raw = window.localStorage.getItem(orderStorageKey);
       if (!raw) return null;
       const order = JSON.parse(raw);
-      if (!order || typeof order.id !== "string" || !sizes.includes(order.size) ||
-          !Number.isInteger(order.quantity) || order.quantity < 1 ||
-          order.status !== "SIMULATED" || typeof order.createdAt !== "string") {
+      if (
+        !order ||
+        typeof order.id !== "string" ||
+        !sizes.includes(order.size) ||
+        !Number.isInteger(order.quantity) ||
+        order.quantity < 1 ||
+        order.status !== "SIMULATED" ||
+        typeof order.createdAt !== "string"
+      ) {
         return null;
       }
       return order;
@@ -97,7 +103,8 @@
       return;
     }
     if (!bag.every((size) => size === bag[0])) {
-      checkoutStatus.textContent = "For this demo, use one size per checkout. Clear the bag and choose one size.";
+      checkoutStatus.textContent =
+        "For this demo, use one size per checkout. Clear the bag and choose one size.";
       return;
     }
     checkoutButton.disabled = true;
@@ -119,7 +126,10 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ size: bag[0], quantity: bag.length }),
         });
-        if (!response.ok) throw new Error("The local checkout server is unavailable or rejected the order.");
+        if (!response.ok)
+          throw new Error(
+            "The local checkout server is unavailable or rejected the order.",
+          );
         const saved = await response.json();
         order = {
           id: saved.id,
